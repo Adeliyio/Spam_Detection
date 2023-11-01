@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[6]:
-
-
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
@@ -17,8 +11,6 @@ def preprocess(text):
     return text.lower()
 
 data = pd.read_csv("spam.csv", encoding= 'latin-1')
-
-# Assuming the columns are named "class" and "message", if not, adjust accordingly
 data = data[["class", "message"]]
 data['message'] = data['message'].apply(preprocess)
 
@@ -62,8 +54,6 @@ def spamdetection():
 
 spamdetection()
 
-
-# In[ ]:
 
 
 
